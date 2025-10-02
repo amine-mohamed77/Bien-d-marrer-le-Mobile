@@ -12,17 +12,29 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myapplication.ui.MainScreen
+import com.example.myapplication.ui.theme.HelloCounterTheme
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { MaterialTheme { MainScreen() } }
+        setContent {
+            HelloCounterTheme {
+                MainScreen()
+            }
+        }
     }
 }
 
-@Preview(showBackground = true, widthDp = 360)
 @Composable
-fun PreviewMainScreen() {
-    MaterialTheme { MainScreen() }
+fun App() {
+    MaterialTheme {
+        MainScreen()
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewApp() {
+    App()
 }
